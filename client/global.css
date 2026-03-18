@@ -152,3 +152,13 @@
     transform-origin: 100% 100%;
   }
 }
+
+@layer utilities {
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+}
