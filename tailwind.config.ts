@@ -2,7 +2,7 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./client/**/*.{ts,tsx}"],
+  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
     container: {
@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        body: ['"Geist"', 'system-ui', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,10 +61,6 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        moon: "hsl(var(--moon))",
-        "moon-light": "hsl(var(--moon-light))",
-        "moon-dark": "hsl(var(--moon-dark))",
-        rose: "hsl(var(--rose))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -69,77 +69,33 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
-        },
-        "float": {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-20px)" },
-        },
-        "glow": {
-          "0%, 100%": { boxShadow: "0 0 20px rgba(168, 85, 247, 0.5), 0 0 40px rgba(168, 85, 247, 0.3)" },
-          "50%": { boxShadow: "0 0 40px rgba(168, 85, 247, 0.8), 0 0 60px rgba(168, 85, 247, 0.5)" },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
         "pulse-glow": {
-          "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0.5" },
+          "0%, 100%": { boxShadow: "0 0 30px rgba(255,255,255,0.3)" },
+          "50%": { boxShadow: "0 0 60px rgba(255,255,255,0.6)" },
         },
-        "confetti": {
-          "0%": {
-            opacity: "1",
-            transform: "translateY(0) rotate(0deg)",
-          },
-          "100%": {
-            opacity: "0",
-            transform: "translateY(100vh) rotate(720deg)",
-          },
+        "float": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
         },
-        "heart-fall": {
-          "0%": {
-            opacity: "1",
-            transform: "translateY(0) translateX(0) scale(1)",
-          },
-          "100%": {
-            opacity: "0",
-            transform: "translateY(100vh) translateX(var(--tx)) scale(0.1)",
-          },
-        },
-        "scroll-indicator": {
-          "0%, 20%, 50%, 80%, 100%": {
-            opacity: "1",
-            transform: "translateY(0)",
-          },
-          "40%": {
-            opacity: "0.5",
-            transform: "translateY(10px)",
-          },
-          "60%": {
-            opacity: "0.5",
-            transform: "translateY(10px)",
-          },
+        "ring-pulse": {
+          "0%": { transform: "scale(0.8)", opacity: "0" },
+          "50%": { opacity: "1" },
+          "100%": { transform: "scale(1.4)", opacity: "0" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "float": "float 3s ease-in-out infinite",
-        "glow": "glow 2s ease-in-out infinite",
-        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
-        "confetti": "confetti 3s ease-in forwards",
-        "heart-fall": "heart-fall 2.5s ease-in forwards",
-        "scroll-indicator": "scroll-indicator 1.5s ease-in-out infinite",
+        "pulse-glow": "pulse-glow 3s ease-in-out infinite",
+        "float": "float 6s ease-in-out infinite",
+        "ring-pulse": "ring-pulse 3s ease-out infinite",
       },
     },
   },

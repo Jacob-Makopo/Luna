@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Geist:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 230 30% 6%;
+    --foreground: 230 10% 95%;
+
+    --card: 230 25% 10%;
+    --card-foreground: 230 10% 95%;
+
+    --popover: 230 25% 10%;
+    --popover-foreground: 230 10% 95%;
+
+    --primary: 210 60% 75%;
+    --primary-foreground: 230 30% 6%;
+
+    --secondary: 230 20% 14%;
+    --secondary-foreground: 230 10% 95%;
+
+    --muted: 230 20% 14%;
+    --muted-foreground: 230 10% 70%;
+
+    --accent: 210 60% 70%;
+    --accent-foreground: 230 30% 6%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 0% 100% / 0.1;
+    --input: 230 20% 14%;
+    --ring: 210 60% 70%;
+
+    --radius: 1.5rem;
+
+    --lunar-glow: 0 0 80px rgba(255, 255, 255, 0.15);
+    --lunar-glow-intense: 0 0 120px rgba(255, 255, 255, 0.3);
+    --moon-gradient: linear-gradient(180deg, hsl(220 10% 90%) 0%, hsl(220 10% 65%) 100%);
+
+    --sidebar-background: 230 30% 6%;
+    --sidebar-foreground: 230 10% 92%;
+    --sidebar-primary: 210 60% 70%;
+    --sidebar-primary-foreground: 230 30% 6%;
+    --sidebar-accent: 230 20% 14%;
+    --sidebar-accent-foreground: 230 10% 92%;
+    --sidebar-border: 0 0% 100% / 0.1;
+    --sidebar-ring: 210 60% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Geist', system-ui, sans-serif;
+    letter-spacing: 0.05em;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .text-lunar {
+    color: hsl(var(--foreground));
+  }
+
+  .bg-deep-space {
+    background-color: hsl(var(--background));
+  }
+
+  .glow-lunar {
+    box-shadow: var(--lunar-glow);
+  }
+
+  .glow-lunar-intense {
+    box-shadow: var(--lunar-glow-intense);
+  }
+
+  .moon-surface {
+    background: var(--moon-gradient);
+  }
+
+  .yes-button-glow {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 0 0 60px rgba(255, 255, 255, 0.2);
+  }
+
+  .tracking-celestial {
+    letter-spacing: 0.3em;
+  }
+
+  .tracking-wide-custom {
+    letter-spacing: 0.4em;
+  }
+}
